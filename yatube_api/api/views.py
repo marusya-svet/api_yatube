@@ -1,7 +1,7 @@
 import os
-from rest_framework import viewsets
-from rest_framework import IsAuthenticated
-from posts.models import Post, Group, Comment
+from rest_framework import viewsets, permissions
+from rest_framework.permissions import IsAuthenticated
+from posts.models import Post, Group
 from django.shortcuts import get_object_or_404
 from django.conf import settings
 
@@ -49,5 +49,3 @@ class CommentViewSet(viewsets.ModelViewSet):
 
     def get_queryset(self):
         return self.get_post().comments
-
-

@@ -26,6 +26,7 @@ class PostSerializer(serializers.ModelSerializer):
     """Сериализатор для Post"""
     author = serializers.SlugRelatedField(slug_field='username',
                                           read_only=True)
+
     class Meta:
         model = Post
         fields = ['id', 'text', 'author', 'image', 'group', 'pub_date']

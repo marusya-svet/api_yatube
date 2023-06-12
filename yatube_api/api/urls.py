@@ -15,5 +15,6 @@ router.register(r'posts/(?P<post_id>\d+)/comments',
 
 urlpatterns = [
     path('', include(router.urls)),
-    path('api-token-auth/', views.obtain_auth_token),
+    path('api-token-auth/', views.obtain_auth_token,
+         name='token_auth'),
 ]
